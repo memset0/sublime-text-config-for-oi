@@ -1,0 +1,42 @@
+[
+	{ 
+		"keys": ["super+d"],
+		"command": "run_macro_file",
+		"args": {
+			"file": "res://Packages/Default/Delete Line.sublime-macro"
+		}
+	},
+	{
+		"keys": ["shift+end"],
+		"command": "move_to",
+		"args": {"to": "eol", "extend": true} 
+	},
+	{
+		"keys": ["super+r"],
+		"command": "build",
+		"args": {
+			"variant": "default"
+		}
+	},
+	{
+		"keys": ["f9"],
+		"command": "build",
+		"args": {
+			"variant": "compile (std=c++14)"
+		}
+	},
+	{
+		"keys": ["f10"],
+		"command": "build",
+		"args": {
+			"variant": "run (iTerm 2)"
+		}
+	},
+	{
+		"keys": ["f11"],
+		"command": "build",
+		"args": {
+			"variant": "default"
+		}
+	},
+]

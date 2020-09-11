@@ -1,0 +1,37 @@
+{
+	"shell_cmd": "g++ \"${file}\" -o \"${file_path}/${file_base_name}.exe\" -O2 -std=c++14 -Wall -Wno-deprecated-register -Dmemset0 -Dlocal && osascript -e 'tell application \"iTerm\" to create window with default profile command \"bash -c \\\"cd \\\\\"${file_path}\\\\\" && /usr/local/bin/ConsolePauser \\\\\"${file_path}/${file_base_name}.exe\\\\\"\\\"\"'",
+	"file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",
+	"working_dir": "${file_path}",
+	"selector": "source.c, source.c++",
+	"variants":
+	[
+		{
+			"name": "default",
+			"shell_cmd": "g++ \"${file}\" -o \"${file_path}/${file_base_name}.exe\" -O2 -std=c++14 -Wall -Wno-deprecated-register -Dmemset0 -Dlocal && osascript -e 'tell application \"iTerm\" to create window with default profile command \"bash -c \\\"cd \\\\\"${file_path}\\\\\" && /usr/local/bin/ConsolePauser \\\\\"${file_path}/${file_base_name}.exe\\\\\"\\\"\"'",
+		},
+		{
+			"name": "compile (std=c++98)",
+			"shell_cmd": "g++ \"${file}\" -o \"${file_path}/${file_base_name}.exe\" -O2 -std=c++98 -Wall -Wno-deprecated-register -Dmemset0 -Dlocal"
+		},
+		{
+			"name": "compile (std=c++11)",
+			"shell_cmd": "g++ \"${file}\" -o \"${file_path}/${file_base_name}.exe\" -O2 -std=c++11 -Wall -Wno-deprecated-register -Dmemset0 -Dlocal"
+		},
+		{
+			"name": "compile (std=c++14)",
+			"shell_cmd": "g++ \"${file}\" -o \"${file_path}/${file_base_name}.exe\" -O2 -std=c++14 -Wall -Wno-deprecated-register -Dmemset0 -Dlocal"
+		},
+		{
+			"name": "compile (std=c++17)",
+			"shell_cmd": "g++ \"${file}\" -o \"${file_path}/${file_base_name}.exe\" -O2 -std=c++17 -Wall -Wno-deprecated-register -Dmemset0 -Dlocal"
+		},
+		{
+			"name": "run (Terminal)",
+			"shell_cmd": "osascript -e 'tell application \"Terminal\" to do script \"clear; ConsolePauser \\\"${file_path}/${file_base_name}.exe\\\"; exit\"' -e \"tell application \\\"Terminal\\\" to activate\""
+		},
+		{
+			"name": "run (iTerm 2)",
+			"shell_cmd": "osascript -e 'tell application \"iTerm\" to create window with default profile command \"bash -c \\\"cd \\\\\"${file_path}\\\\\" && /usr/local/bin/ConsolePauser \\\\\"${file_path}/${file_base_name}.exe\\\\\"\\\"\"'"
+		},
+	]
+}
